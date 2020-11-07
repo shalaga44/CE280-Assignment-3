@@ -3,13 +3,14 @@
 //
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Student.h"
 
 using namespace std;
 
 
 int main() {
-    int studentCount = 1;
+    int studentCount = 8;
     Student studentsArray[studentCount];
     for (int i = 0; i < studentCount; ++i) {
         Student student;
@@ -17,8 +18,13 @@ int main() {
         studentsArray[i] = student;
     }
 
-    for (int i = 0; i < studentCount; ++i)
-        cout << studentsArray[i];
+    ofstream fileOut("output.txt");
+    if (fileOut.is_open()) {
+        for (int i = 0; i < studentCount; ++i)
+            fileOut << studentsArray[i];
+        fileOut.close();
+    } else cout << "Unable to open file";
+
 
     return 0;
 }
