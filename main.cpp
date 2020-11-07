@@ -7,18 +7,22 @@
 using namespace std;
 
 int main() {
+    // Initialize  Variables
     string studentName;
     string universityId;
     string department;
     int grade;
     char mark;
-    
+
+    // Name Input
     cout << "Enter your student name: ";
     getline(cin, studentName);
 
+    // University Id Input
     cout << "Enter your university Id: ";
     getline(cin, universityId);
 
+    // Department Input
     cout << "Enter your department(A: Control, C: Computer, T: Telecommunication): ";
     getline(cin, department);
     char departmentChar;
@@ -38,6 +42,7 @@ int main() {
             break;
     }
 
+    // Grade Input
     cout << "Grade: ";
     cin >> grade;
     if (grade <= 100 && grade >= 90)
@@ -52,6 +57,7 @@ int main() {
         mark = 'F';
 
 
+    // Final Output
     cout << "Name: " << studentName << endl;
     cout << "University ID: " << universityId << endl;
     cout << "Mark: " << mark << endl;
