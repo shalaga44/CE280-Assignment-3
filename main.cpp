@@ -6,30 +6,16 @@
 
 using namespace std;
 
-string &leftTrim(string &str, string &chars) {
-    str.erase(0, str.find_first_not_of(chars));
-    return str;
-}
-
-string &rightTrim(string &str, string &chars) {
-    str.erase(str.find_last_not_of(chars) + 1);
-    return str;
-}
-
-string &trimString(string &str) {
-    string chars_to_trim = " ";
-    return leftTrim(rightTrim(str, chars_to_trim), chars_to_trim);
-}
 
 int main() {
-    for (int i = 0; i < 5; ++i) {
+    // Initialize  Variables
+    string studentName;
+    string universityId;
+    string department;
+    int grade;
+    char mark;
+    do {
 
-        // Initialize  Variables
-        string studentName;
-        string universityId;
-        string department;
-        int grade;
-        char mark;
 
         // Name Input
         cout << "Enter your student name: ";
@@ -81,7 +67,10 @@ int main() {
         cout << "University ID: " << universityId << endl;
         cout << "Mark: " << mark << endl;
         cout << "Department: " << department << endl;
+
     }
+    while (studentName != "Exit");
+
     return 0;
 
 }
